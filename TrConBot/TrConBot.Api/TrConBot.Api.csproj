@@ -119,7 +119,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AdmAccessToken.cs" />
     <Compile Include="Services\BingTranslatorClient.cs" />
     <Compile Include="Services\CognitiveServicesAuthentificator.cs" />
     <Compile Include="Services\IPriceCalculator.cs" />
