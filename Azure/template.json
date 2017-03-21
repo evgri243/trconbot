@@ -1,0 +1,110 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "accounts_tcb_luis_name": {
+            "defaultValue": "tcbot-luis",
+            "type": "String"
+        },
+        "accounts_tcb_translate_name": {
+            "defaultValue": "tcbot-translate",
+            "type": "String"
+        },
+        "serverfarms_tcb_plan_name": {
+            "defaultValue": "tcbot-plan",
+            "type": "String"
+        },
+        "sites_tcb_api_name": {
+            "defaultValue": "tcbot-api",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/92d0648c-f0dd-4efe-a505-b2a26c229a16/resourceGroups/TrConBot/providers/Microsoft.CognitiveServices/accounts/tcb-luis'.",
+            "type": "Microsoft.CognitiveServices/accounts",
+            "sku": {
+                "name": "F0"
+            },
+            "kind": "LUIS",
+            "name": "[parameters('accounts_tcb_luis_name')]",
+            "apiVersion": "2016-02-01-preview",
+            "location": "westus",
+            "properties": {},
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/92d0648c-f0dd-4efe-a505-b2a26c229a16/resourceGroups/TrConBot/providers/Microsoft.CognitiveServices/accounts/tcb-translate'.",
+            "type": "Microsoft.CognitiveServices/accounts",
+            "sku": {
+                "name": "F0"
+            },
+            "kind": "TextTranslation",
+            "name": "[parameters('accounts_tcb_translate_name')]",
+            "apiVersion": "2016-02-01-preview",
+            "location": "global",
+            "properties": {},
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/92d0648c-f0dd-4efe-a505-b2a26c229a16/resourceGroups/TrConBot/providers/Microsoft.Web/serverfarms/tcb-plan'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "F1",
+                "tier": "Free",
+                "size": "F1",
+                "family": "F",
+                "capacity": 0
+            },
+            "kind": "app",
+            "name": "[parameters('serverfarms_tcb_plan_name')]",
+            "apiVersion": "2015-08-01",
+            "location": "West Europe",
+            "properties": {
+                "name": "[parameters('serverfarms_tcb_plan_name')]",
+                "numberOfWorkers": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/92d0648c-f0dd-4efe-a505-b2a26c229a16/resourceGroups/TrConBot/providers/Microsoft.Web/sites/tcb-api'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "api",
+            "name": "[parameters('sites_tcb_api_name')]",
+            "apiVersion": "2015-08-01",
+            "location": "West Europe",
+            "tags": {
+                "hidden-related:/subscriptions/92d0648c-f0dd-4efe-a505-b2a26c229a16/resourceGroups/TrConBot/providers/Microsoft.Web/serverfarms/tcb-plan": "empty"
+            },
+            "properties": {
+                "name": "[parameters('sites_tcb_api_name')]",
+                "hostNames": [
+                    "tcb-api.azurewebsites.net"
+                ],
+                "enabledHostNames": [
+                    "tcb-api.azurewebsites.net",
+                    "tcb-api.scm.azurewebsites.net"
+                ],
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_tcb_api_name'),'.azurewebsites.net')]",
+                        "sslState": 0,
+                        "thumbprint": null,
+                        "ipBasedSslState": 0
+                    },
+                    {
+                        "name": "[concat(parameters('sites_tcb_api_name'),'.scm.azurewebsites.net')]",
+                        "sslState": 0,
+                        "thumbprint": null,
+                        "ipBasedSslState": 0
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_tcb_plan_name'))]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_tcb_plan_name'))]"
+            ]
+        }
+    ]
+}

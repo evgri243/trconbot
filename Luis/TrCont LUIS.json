@@ -1,0 +1,262 @@
+{
+  "luis_schema_version": "2.0.0",
+  "versionId": "0.1",
+  "name": "TrCont LUIS",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "CalculateCosts"
+    },
+    {
+      "name": "Goodbye"
+    },
+    {
+      "name": "Hello"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "ThankYou"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [
+    "datetime",
+    "geography",
+    "number"
+  ],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "so long",
+      "intent": "Goodbye",
+      "entities": []
+    },
+    {
+      "text": "(d)",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "aaa",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's included in the price?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is included in the price?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who are you?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how is it going?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "break all",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what else is included in the price except?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's included in the price, in addition to transporting container",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what else is included in the price except for transportation?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's included in the price except for sending?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's included in the cost you?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me, what's included in the price?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "jajajaja",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is included in the price, in addition to transporting container?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what else is included in the price?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "container to moscow?",
+      "intent": "CalculateCosts",
+      "entities": []
+    },
+    {
+      "text": "from moscow to moscow?",
+      "intent": "CalculateCosts",
+      "entities": []
+    },
+    {
+      "text": "how much will it cost to send 3 containers from moscow to st. petersburg tomorrow?",
+      "intent": "CalculateCosts",
+      "entities": []
+    },
+    {
+      "text": "calculate price",
+      "intent": "CalculateCosts",
+      "entities": []
+    },
+    {
+      "text": "how much will it cost to send a consignment from moscow to saratov?",
+      "intent": "CalculateCosts",
+      "entities": []
+    },
+    {
+      "text": "how much will it cost to send cargo?",
+      "intent": "CalculateCosts",
+      "entities": []
+    },
+    {
+      "text": "how much will it cost to 3 containers to seattle?",
+      "intent": "CalculateCosts",
+      "entities": []
+    },
+    {
+      "text": "how much will it cost to deliver cargo from moscow to vladivostok?",
+      "intent": "CalculateCosts",
+      "entities": []
+    },
+    {
+      "text": "are you here?",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "hi!",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "hello!",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "r u here",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "can i ask you",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "thank you!",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "have a nice day",
+      "intent": "Goodbye",
+      "entities": []
+    },
+    {
+      "text": "see you",
+      "intent": "Goodbye",
+      "entities": []
+    },
+    {
+      "text": "goodbye",
+      "intent": "Goodbye",
+      "entities": []
+    },
+    {
+      "text": "good bye",
+      "intent": "Goodbye",
+      "entities": []
+    },
+    {
+      "text": "bye",
+      "intent": "Goodbye",
+      "entities": []
+    },
+    {
+      "text": "thanks, bye",
+      "intent": "Goodbye",
+      "entities": []
+    },
+    {
+      "text": "while so far",
+      "intent": "Goodbye",
+      "entities": []
+    },
+    {
+      "text": "thank you",
+      "intent": "ThankYou",
+      "entities": []
+    },
+    {
+      "text": "thanks",
+      "intent": "ThankYou",
+      "entities": []
+    },
+    {
+      "text": "thank you so much",
+      "intent": "ThankYou",
+      "entities": []
+    },
+    {
+      "text": "thanks, you really helped",
+      "intent": "ThankYou",
+      "entities": []
+    }
+  ]
+}
