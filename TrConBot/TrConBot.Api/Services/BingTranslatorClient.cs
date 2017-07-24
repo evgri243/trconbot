@@ -46,31 +46,6 @@ namespace TrConBot.Api.Services
             }
         }
 
-        #region Helper methods from https://github.com/MicrosoftTranslator/CSharp-WPF-Example/blob/master/MSTranslatorTAPDemo/MainWindow.xaml.cs
-        private string GetAccessToken()
-        {
-            String strTranslatorAccessURI = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13";
-            String strRequestDetails = string.Format("grant_type=client_credentials&client_id={0}&client_secret={1}&scope=http://api.microsofttranslator.com", HttpUtility.UrlEncode(_subscriptionKey), HttpUtility.UrlEncode(_secret));
-
-            System.Net.WebRequest webRequest = System.Net.WebRequest.Create(strTranslatorAccessURI);
-            webRequest.ContentType = "application/x-www-form-urlencoded";
-            webRequest.Method = "POST";
-
-            byte[] bytes = System.Text.Encoding.ASCII.GetBytes(strRequestDetails);
-            webRequest.ContentLength = bytes.Length;
-            using (System.IO.Stream outputStream = webRequest.GetRequestStream())
-            {
-                outputStream.Write(bytes, 0, bytes.Length);
-            }
-            System.Net.WebResponse webResponse = webRequest.GetResponse();
-
-            System.Runtime.Serialization.Json.DataContractJsonSerializer serializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(AdmAccessToken));
-
-            AdmAccessToken token = (AdmAccessToken)serializer.ReadObject(webResponse.GetResponseStream());
-
-            return token.access_token;
-        }
-
         private string ExtractTranslation(string response)
         {
             if (response == null) throw new ArgumentNullException(nameof(response));
@@ -79,7 +54,6 @@ namespace TrConBot.Api.Services
             xTranslation.LoadXml(response);
             return xTranslation.InnerText;
         }
-        #endregion
     }
 
 }
